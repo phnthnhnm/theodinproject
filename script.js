@@ -46,7 +46,23 @@ function addBookToLibrary(author, title, pages, read) {
 
 document.addEventListener('DOMContentLoaded', () => {
   displayBooks()
-  document.getElementById('new-book-button').addEventListener('click', () => {
-    addBookToLibrary('New Author', 'New Title', 123, false)
+
+  const newBookButton = document.getElementById('new-book-button')
+  const bookDialog = document.getElementById('book-dialog')
+  const bookForm = document.getElementById('book-form')
+
+  newBookButton.addEventListener('click', () => {
+    bookDialog.showModal()
+  })
+
+  bookForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const author = document.getElementById('author').value
+    const title = document.getElementById('title').value
+    const pages = document.getElementById('pages').value
+    const read = document.getElementById('read').checked
+    addBookToLibrary(author, title, pages, read)
+    bookForm.reset()
+    bookDialog.close()
   })
 })

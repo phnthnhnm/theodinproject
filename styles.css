@@ -49,3 +49,47 @@ body {
 .new-book-button:hover {
   background-color: var(--ctp-mocha-surface1);
 }
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.book-form input,
+.book-form label {
+  font-size: 16px;
+}
+
+.book-form input[type='text'],
+.book-form input[type='number'] {
+  padding: 5px;
+  border: 1px solid var(--ctp-mocha-overlay0);
+  border-radius: 4px;
+}
+
+.book-form button {
+  background-color: var(--ctp-mocha-surface2);
+  border: none;
+  border-radius: 8px;
+  color: var(--ctp-mocha-text);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.book-form button:hover {
+  background-color: var(--ctp-mocha-surface1);
+}
+
+.book-dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--ctp-mocha-surface0);
+}
+
+.book-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
