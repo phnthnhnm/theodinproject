@@ -120,3 +120,22 @@ body {
 .delete-button:hover {
   filter: brightness(0.8);
 }
+
+.toggle-read-button {
+  background-color: var(--ctp-mocha-yellow);
+  border: none;
+  border-radius: 50%;
+  color: var(--ctp-mocha-text);
+  cursor: pointer;
+  font-size: 1em;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.toggle-read-button:hover {
+  filter: brightness(0.8);
+}

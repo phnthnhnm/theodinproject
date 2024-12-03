@@ -34,6 +34,15 @@ function displayBooks() {
     read.textContent = `Read: ${book.read ? 'Yes' : 'No'}`
     card.appendChild(read)
 
+    const toggleReadButton = document.createElement('button')
+    toggleReadButton.textContent = '🔄'
+    toggleReadButton.classList.add('toggle-read-button')
+    toggleReadButton.addEventListener('click', () => {
+      book.read = !book.read
+      displayBooks()
+    })
+    card.appendChild(toggleReadButton)
+
     const deleteButton = document.createElement('button')
     deleteButton.innerHTML = '🗑️'
     deleteButton.classList.add('delete-button')
