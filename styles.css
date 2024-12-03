@@ -34,3 +34,18 @@ body {
 .card p {
   margin: 5px 0;
 }
+
+.new-book-button {
+  background-color: var(--ctp-mocha-surface2);
+  border: none;
+  border-radius: 8px;
+  color: var(--ctp-mocha-text);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.new-book-button:hover {
+  background-color: var(--ctp-mocha-surface1);
+}

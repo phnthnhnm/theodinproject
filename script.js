@@ -13,6 +13,7 @@ myLibrary.push(new Book('George Orwell', '1984', 328, true))
 
 function displayBooks() {
   const container = document.getElementById('library-container')
+  container.innerHTML = '' // Clear existing books
   myLibrary.forEach((book) => {
     const card = document.createElement('div')
     card.classList.add('card')
@@ -37,4 +38,15 @@ function displayBooks() {
   })
 }
 
-document.addEventListener('DOMContentLoaded', displayBooks)
+function addBookToLibrary(author, title, pages, read) {
+  const newBook = new Book(author, title, pages, read)
+  myLibrary.push(newBook)
+  displayBooks()
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  displayBooks()
+  document.getElementById('new-book-button').addEventListener('click', () => {
+    addBookToLibrary('New Author', 'New Title', 123, false)
+  })
+})
