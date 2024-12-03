@@ -14,7 +14,7 @@ myLibrary.push(new Book('George Orwell', '1984', 328, true))
 function displayBooks() {
   const container = document.getElementById('library-container')
   container.innerHTML = '' // Clear existing books
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
     const card = document.createElement('div')
     card.classList.add('card')
 
@@ -33,6 +33,15 @@ function displayBooks() {
     const read = document.createElement('p')
     read.textContent = `Read: ${book.read ? 'Yes' : 'No'}`
     card.appendChild(read)
+
+    const deleteButton = document.createElement('button')
+    deleteButton.innerHTML = '🗑️'
+    deleteButton.classList.add('delete-button')
+    deleteButton.addEventListener('click', () => {
+      myLibrary.splice(index, 1)
+      displayBooks()
+    })
+    card.appendChild(deleteButton)
 
     container.appendChild(card)
   })
