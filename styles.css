@@ -139,3 +139,51 @@ body {
 .toggle-read-button:hover {
   filter: brightness(0.8);
 }
+
+.confirm-dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--ctp-mocha-text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--ctp-mocha-surface0);
+}
+
+.confirm-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confirm-button {
+  background-color: var(--ctp-mocha-red);
+  border: none;
+  border-radius: 8px;
+  color: var(--ctp-mocha-crust);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirm-button:hover {
+  filter: brightness(0.8);
+}
+
+.cancel-button {
+  background-color: var(--ctp-mocha-green);
+  border: none;
+  border-radius: 8px;
+  color: var(--ctp-mocha-crust);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cancel-button:hover {
+  filter: brightness(0.8);
+}

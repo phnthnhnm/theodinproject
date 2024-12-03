@@ -47,8 +47,7 @@ function displayBooks() {
     deleteButton.innerHTML = '🗑️'
     deleteButton.classList.add('delete-button')
     deleteButton.addEventListener('click', () => {
-      myLibrary.splice(index, 1)
-      displayBooks()
+      showDeleteConfirmation(index)
     })
     card.appendChild(deleteButton)
 
@@ -60,6 +59,24 @@ function addBookToLibrary(author, title, pages, read) {
   const newBook = new Book(author, title, pages, read)
   myLibrary.push(newBook)
   displayBooks()
+}
+
+function showDeleteConfirmation(index) {
+  const confirmDialog = document.getElementById('confirm-dialog')
+  confirmDialog.showModal()
+
+  const confirmDeleteButton = document.getElementById('confirm-delete')
+  const cancelDeleteButton = document.getElementById('cancel-delete')
+
+  confirmDeleteButton.onclick = () => {
+    myLibrary.splice(index, 1)
+    displayBooks()
+    confirmDialog.close()
+  }
+
+  cancelDeleteButton.onclick = () => {
+    confirmDialog.close()
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
