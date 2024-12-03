@@ -1,1 +1,3 @@
-# odin-library
+# Odin Library
+
+A mock library.
