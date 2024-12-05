@@ -36,7 +36,8 @@ const displayController = (() => {
   }
 
   const printResult = (result) => {
-    console.log(result)
+    const resultContainer = document.getElementById('result')
+    resultContainer.textContent = result
   }
 
   const renderBoard = () => {
@@ -56,9 +57,18 @@ const displayController = (() => {
 })()
 
 const gameController = (() => {
-  const player1 = Player('Player 1', 'X')
-  const player2 = Player('Player 2', 'O')
-  let currentPlayer = player1
+  let player1, player2, currentPlayer
+
+  const startGame = () => {
+    const player1Name = document.getElementById('player1').value || 'Player 1'
+    const player2Name = document.getElementById('player2').value || 'Player 2'
+    player1 = Player(player1Name, 'X')
+    player2 = Player(player2Name, 'O')
+    currentPlayer = player1
+    gameBoard.resetBoard()
+    displayController.renderBoard()
+    displayController.printResult('')
+  }
 
   const switchPlayer = () => {
     currentPlayer = currentPlayer === player1 ? player2 : player1
@@ -103,8 +113,10 @@ const gameController = (() => {
     }
   }
 
-  return { playRound }
+  return { startGame, playRound }
 })()
+
+document.getElementById('startGame').addEventListener('click', gameController.startGame)
 
 displayController.renderBoard()
 gameController.playRound(0)

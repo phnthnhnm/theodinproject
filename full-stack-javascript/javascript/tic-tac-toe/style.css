@@ -2,12 +2,36 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid var(--ctp-mocha-surface0);
+  background-color: var(--ctp-mocha-mantle);
+  color: var(--ctp-mocha-text);
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: var(--ctp-mocha-green);
+  color: var(--ctp-mocha-base);
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: var(--ctp-mocha-green);
 }
 
 .board {
