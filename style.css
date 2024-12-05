@@ -1,27 +1,44 @@
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: var(--ctp-mocha-base);
+  color: var(--ctp-mocha-text);
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.title {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--ctp-mocha-green);
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #333;
 }
 
 .project-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: var(--ctp-mocha-mantle);
+  border: 1px solid var(--ctp-mocha-surface0);
   border-radius: 5px;
   padding: 20px;
-  margin: 10px 0;
+  margin: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,6 +46,7 @@ h1 {
   margin-top: 0;
 }
 
-.project-card p {
-  color: #666;
+.project-card h2 a {
+  color: var(--ctp-mocha-text);
+  text-decoration: none;
 }
