@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  color: var(--ctp-mocha-text);
   background-color: var(--ctp-mocha-base);
 }
 
@@ -24,7 +23,7 @@ button {
   padding: 10px;
   border: none;
   background-color: var(--ctp-mocha-green);
-  color: var(--ctp-mocha-base);
+  color: var(--ctp-mocha-crust);
   cursor: pointer;
 }
 

@@ -57,7 +57,7 @@ const displayController = (() => {
 })()
 
 const gameController = (() => {
-  let player1, player2, currentPlayer
+  let player1, player2, currentPlayer, gameActive
 
   const startGame = () => {
     const player1Name = document.getElementById('player1').value || 'Player 1'
@@ -68,6 +68,14 @@ const gameController = (() => {
     gameBoard.resetBoard()
     displayController.renderBoard()
     displayController.printResult('')
+    gameActive = true
+  }
+
+  const resetGame = () => {
+    gameBoard.resetBoard()
+    displayController.renderBoard()
+    displayController.printResult('')
+    gameActive = true
   }
 
   const switchPlayer = () => {
@@ -98,13 +106,16 @@ const gameController = (() => {
   }
 
   const playRound = (index) => {
+    if (!gameActive) {
+      console.log('Game over. Please reset the game to play again.')
+      return
+    }
     if (gameBoard.updateBoard(index, currentPlayer.getMarker())) {
       const winner = checkWinner()
       displayController.renderBoard()
       if (winner) {
         displayController.printResult(winner === 'Draw' ? "It's a draw!" : `${winner} wins!`)
-        gameBoard.resetBoard()
-        displayController.renderBoard()
+        gameActive = false
       } else {
         switchPlayer()
       }
@@ -113,10 +124,11 @@ const gameController = (() => {
     }
   }
 
-  return { startGame, playRound }
+  return { startGame, resetGame, playRound }
 })()
 
 document.getElementById('startGame').addEventListener('click', gameController.startGame)
+document.getElementById('resetGame').addEventListener('click', gameController.resetGame)
 
 displayController.renderBoard()
 gameController.playRound(0)
