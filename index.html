@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Etch-a-Sketch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="menu">
+      <label for="pen-color">Pen Color:</label>
+      <input type="color" id="pen-color" name="pen-color" value="#000000" />
+      <label for="bg-color">Background Color:</label>
+      <input type="color" id="bg-color" name="bg-color" value="#eff1f5" />
+      <input type="range" id="grid-size" name="grid-size" min="1" max="100" value="16" />
+      <label id="grid-size-label">Grid Size: 16 x 16</label>
+      <div style="display: flex; justify-content: space-between">
+        <button class="pen-mode-button" data-mode="fixed">Fixed</button>
+        <button class="pen-mode-button" data-mode="random">Random</button>
+        <button class="pen-mode-button" data-mode="darken">Darken</button>
+      </div>
+      <button id="toggle-grid-lines">Toggle Grid Lines</button>
+      <button id="clear">Clear</button>
+    </div>
+    <div class="container"></div>
+    <button id="toggle-dark-mode" class="dark-mode-toggle">🌜</button>
+  </body>
+</html>

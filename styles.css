@@ -1,0 +1,153 @@
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--ctp-latte-base);
+  color: var(--ctp-latte-text);
+}
+
+body.dark-mode {
+  background-color: var(--ctp-mocha-base);
+  color: var(--ctp-mocha-text);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+button,
+select,
+label,
+input {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--ctp-latte-green);
+  color: var(--ctp-latte-base);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+body.dark-mode button {
+  background-color: var(--ctp-mocha-green);
+  color: var(--ctp-mocha-base);
+}
+
+button:hover {
+  background-color: var(--ctp-latte-blue);
+  color: var(--ctp-latte-base);
+}
+
+body.dark-mode button:hover {
+  background-color: var(--ctp-mocha-blue);
+  color: var(--ctp-mocha-base);
+}
+
+select,
+input[type='color'] {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: var(--ctp-latte-mantle);
+  color: var(--ctp-latte-text);
+  border: 1px solid var(--ctp-latte-green);
+  border-radius: 5px;
+}
+
+body.dark-mode select,
+body.dark-mode input[type='color'] {
+  background-color: var(--ctp-mocha-mantle);
+  color: var(--ctp-mocha-text);
+  border: 1px solid var(--ctp-mocha-green);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: 70vw;
+  max-width: 680px;
+  max-height: 680px;
+  border: 2px solid var(--ctp-latte-green);
+  background-color: #fff;
+}
+
+body.dark-mode .container {
+  border: 2px solid var(--ctp-mocha-green);
+}
+
+.grid-item {
+  box-sizing: border-box;
+}
+
+.pen-mode-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: var(--ctp-latte-mantle);
+  color: var(--ctp-latte-text);
+  border: 1px solid var(--ctp-latte-green);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  width: calc(33.33% - 10px);
+  box-sizing: border-box;
+}
+
+body.dark-mode .pen-mode-button {
+  background-color: var(--ctp-mocha-mantle);
+  color: var(--ctp-mocha-text);
+  border: 1px solid var(--ctp-mocha-green);
+}
+
+.pen-mode-button.active {
+  background-color: var(--ctp-latte-green);
+  color: var(--ctp-latte-base);
+}
+
+body.dark-mode .pen-mode-button.active {
+  background-color: var(--ctp-mocha-green);
+  color: var(--ctp-mocha-base);
+}
+
+input[type='range'] {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.grid-item.with-border {
+  border: 1px solid var(--ctp-latte-text);
+}
+
+body.dark-mode .grid-item.with-border {
+  border: 1px solid var(--ctp-mocha-crust);
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--ctp-latte-text);
+  width: auto; /* Ensure it doesn't take up the whole footer */
+  height: auto; /* Ensure it doesn't take up the whole footer */
+  padding: 0; /* Remove any padding */
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: var(--ctp-mocha-text);
+}
