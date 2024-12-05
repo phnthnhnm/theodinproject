@@ -39,7 +39,20 @@ const displayController = (() => {
     console.log(result)
   }
 
-  return { printBoard, printResult }
+  const renderBoard = () => {
+    const board = gameBoard.getBoard()
+    const boardContainer = document.getElementById('board')
+    boardContainer.innerHTML = ''
+    board.forEach((cell, index) => {
+      const cellElement = document.createElement('div')
+      cellElement.classList.add('cell')
+      cellElement.textContent = cell
+      cellElement.addEventListener('click', () => gameController.playRound(index))
+      boardContainer.appendChild(cellElement)
+    })
+  }
+
+  return { printBoard, printResult, renderBoard }
 })()
 
 const gameController = (() => {
@@ -77,11 +90,11 @@ const gameController = (() => {
   const playRound = (index) => {
     if (gameBoard.updateBoard(index, currentPlayer.getMarker())) {
       const winner = checkWinner()
-      displayController.printBoard()
+      displayController.renderBoard()
       if (winner) {
         displayController.printResult(winner === 'Draw' ? "It's a draw!" : `${winner} wins!`)
         gameBoard.resetBoard()
-        displayController.printBoard()
+        displayController.renderBoard()
       } else {
         switchPlayer()
       }
@@ -93,7 +106,7 @@ const gameController = (() => {
   return { playRound }
 })()
 
-displayController.printBoard()
+displayController.renderBoard()
 gameController.playRound(0)
 gameController.playRound(1)
 gameController.playRound(4)
