@@ -8,6 +8,10 @@ body {
   color: var(--ctp-mocha-text);
 }
 
+a {
+  color: var(--ctp-mocha-blue);
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -20,7 +24,44 @@ body {
 .title {
   grid-column: 1 / -1;
   text-align: center;
+  color: var(--ctp-mocha-text);
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  text-align: center;
+  color: var(--ctp-mocha-blue);
+  margin-bottom: 20px;
+}
+
+.category-title a {
   color: var(--ctp-mocha-green);
+  text-decoration: none;
+}
+
+.category-title a:visited {
+  color: var(--ctp-mocha-green);
+}
+
+.subcategory {
+  margin-bottom: 20px;
+}
+
+.subcategory-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subcategory-title a {
+  color: var(--ctp-mocha-yellow);
+  text-decoration: none;
+}
+
+.subcategory-title a:visited {
+  color: var(--ctp-mocha-yellow);
 }
 
 .project-container {
@@ -47,6 +88,5 @@ h1 {
 }
 
 .project-card h2 a {
-  color: var(--ctp-mocha-text);
   text-decoration: none;
 }
