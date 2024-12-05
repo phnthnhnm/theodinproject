@@ -1,0 +1,162 @@
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+@font-face {
+  font-family: monaspace-neon;
+  src: url(assets/fonts/MonaspaceNeon-Regular.woff2);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ctp-mocha-text);
+}
+
+.left-section {
+  background-image: url('assets/images/background.png');
+  background-size: cover;
+  background-position: left;
+  width: 33.33%;
+  position: relative;
+}
+
+.logo-container {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.website-name {
+  font-family: 'monaspace-neon', monospace, Arial, sans-serif;
+  font-size: 2em;
+  color: white;
+}
+
+.right-section {
+  width: 66.67%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: var(--ctp-mocha-base);
+}
+
+.placeholder-text {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.form-row > div:last-child {
+  margin-right: 0;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--ctp-mocha-green);
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: var(--ctp-mocha-blue);
+  outline: none;
+  box-shadow: 0 0 5px var(--ctp-mocha-blue);
+}
+
+button {
+  padding: 10px;
+  font-size: 1em;
+  background-color: var(--ctp-mocha-green);
+  color: var(--ctp-mocha-crust);
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  align-self: flex-start;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--ctp-mocha-blue);
+}
+
+.align-right {
+  margin-left: 20px;
+}
+
+a {
+  color: var(--ctp-mocha-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: var(--ctp-mocha-red);
+  font-size: 0.9em;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+input.invalid {
+  border-color: var(--ctp-mocha-red);
+}
+
+.credits {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--ctp-mocha-text);
+  font-size: 0.9em;
+}
+
+.credits a {
+  color: var(--ctp-mocha-green);
+  text-decoration: underline;
+}
