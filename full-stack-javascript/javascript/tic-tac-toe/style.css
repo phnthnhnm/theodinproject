@@ -1,19 +1,31 @@
 @import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: var(--ctp-mocha-text);
+  background-color: var(--ctp-mocha-base);
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
-  margin: 20px auto;
+  border: 2px solid var(--ctp-mocha-surface0);
+  background-color: var(--ctp-mocha-crust);
 }
 
 .cell {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--catppuccin-base);
-  color: var(--catppuccin-text);
+  background-color: var(--ctp-mocha-mantle);
+  color: var(--ctp-mocha-green);
   font-size: 2rem;
   cursor: pointer;
+  border: 1px solid var(--ctp-mocha-surface0);
 }
