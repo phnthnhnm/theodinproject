@@ -1,0 +1,361 @@
+@font-face {
+  font-family: 'Monaspace Neon';
+  src: url(assets/fonts/MonaspaceNeonVarVF.woff2) format('woff2');
+}
+
+:root {
+  --font-family: 'Monaspace Neon', monospace;
+
+  --color-text: #cdd6f4; /* Mocha text color */
+  --color-background: #1e1e2e; /* Mocha base color */
+  --color-primary: #a6e3a1; /* Mocha green accent */
+  --color-secondary: #45475a; /* Mocha surface color */
+  --color-accent: #89b4fa; /* Mocha blue accent */
+
+  --pad-top: 1.5rem;
+
+  --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow-md: 0.8px 1.6px 2px -0.8px rgba(0, 0, 0, 0.11), 2.1px 4.1px 5.2px -1.7px rgba(0, 0, 0, 0.11);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-family: var(--font-family);
+}
+
+body {
+  height: 100vh;
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  display: grid;
+  grid-template:
+    'nav header' max-content
+    'nav main'
+    / minmax(max-content, 250px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(1400px, calc(100% - var(--pad-top) * 2));
+  margin-inline: auto;
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: var(--pad-top) 1rem;
+  font-size: 1.3rem;
+  z-index: 9;
+}
+
+nav .logo {
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-bottom: 1.75em;
+  display: block;
+  gap: 0.25em;
+}
+
+nav .logo .icon {
+  font-size: 1.25em;
+}
+
+nav .nav-list {
+  margin-bottom: 3.5em;
+}
+
+nav .nav-item {
+  margin-bottom: 0.3em;
+}
+
+nav .nav-link {
+  display: flex;
+  align-items: center;
+  border-radius: 99rem;
+  width: fit-content;
+  padding: 0.5rem 0.8rem;
+  transition: background-color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+nav .nav-link:hover {
+  background-color: var(--color-primary);
+}
+
+nav .nav-list .nav-link {
+  gap: 1em;
+}
+
+nav .nav-list .icon {
+  font-size: 1.15em;
+}
+
+nav .nav-link.current {
+  font-weight: 700;
+}
+
+nav .nav-link.current,
+nav .nav-link.logo {
+  color: var(--color-text);
+}
+
+header {
+  background-color: var(--color-background);
+  grid-area: header;
+  padding-block: var(--pad-top);
+  box-shadow: var(--shadow-md);
+  z-index: 5;
+}
+
+header .header-top {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+header .header-top .icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+header .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header #search-bar {
+  width: min(85%, 700px);
+  background-color: var(--color-accent);
+  color: inherit;
+  border: 0;
+  border-radius: 99rem;
+  padding: 0.5em 1em;
+}
+
+header .header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header-main .profile {
+  font-size: 1.65rem;
+  gap: 0.7em;
+}
+
+header .header-main .profile .greetings {
+  font-size: 0.5em;
+  font-weight: 600;
+  line-height: normal;
+}
+
+header .header-main .profile .profile-name {
+  font-size: 0.9em;
+}
+
+header button {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.7em 2em;
+  border: 0;
+  border-radius: 99rem;
+  cursor: pointer;
+  margin-left: 1.5em;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+header button:hover,
+header button:focus {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow);
+}
+
+main {
+  --border-width: 10px;
+  background-color: var(--color-background);
+  grid-area: main;
+  overflow-y: scroll;
+  padding-top: var(--pad-top);
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+main .container {
+  display: grid;
+  grid-template-columns: auto 250px;
+  gap: 1.5rem;
+}
+
+main h2,
+main h3,
+main h4 {
+  font-weight: 600;
+}
+
+main h2 {
+  font-size: 1.25em;
+  margin-bottom: 0.7em;
+}
+
+main p,
+main .project .icon {
+  color: var(--color-text);
+}
+
+main p {
+  line-height: 1.5;
+}
+
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+#projects .project {
+  border-left: var(--border-width) solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#projects .project .title {
+  font-size: 1.1em;
+  margin-bottom: 0.2em;
+}
+
+#projects .project p {
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 1.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#projects .project .buttons {
+  text-align: right;
+}
+
+#projects .project button {
+  border: 0;
+  background-color: initial;
+  cursor: pointer;
+  font-size: 1.3em;
+  margin-left: 1em;
+}
+
+#announcements {
+  margin-bottom: var(--pad-top);
+}
+
+#announcements h4 {
+  font-size: 0.8rem;
+}
+
+#announcements p {
+  font-size: 0.8em;
+  font-weight: 300;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#announcements li:not(:last-child) {
+  --mg-bottom: 1.5rem;
+  margin-bottom: var(--mg-bottom);
+  position: relative;
+}
+
+#announcements li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-secondary);
+  bottom: calc(var(--mg-bottom) / -2);
+}
+
+#trending {
+  grid-area: trending;
+}
+
+#trending .username {
+  font-size: 0.9em;
+  color: var(--color-text);
+}
+
+#trending .project-name {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+#trending .profile:not(:last-child) {
+  margin-bottom: 1.25em;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.profile .profile-picture {
+  border-radius: 50%;
+  height: 2.75em;
+  padding: 0.25em;
+}
+
+.profile .profile-name {
+  font-weight: 600;
+}
+
+.card {
+  background-color: var(--color-background);
+  box-shadow: var(--shadow);
+  padding: 1.35rem;
+  border-radius: var(--border-width);
+}
+
+*:focus {
+  outline-color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #cdd6f4;
+    --color-background: #1e1e2e;
+    --color-primary: #a6e3a1;
+    --color-secondary: #45475a;
+    --color-accent: #89b4fa;
+  }
+
+  header,
+  .card {
+    background-color: var(--color-background);
+  }
+}
