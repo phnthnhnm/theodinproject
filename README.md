@@ -1,4 +1,4 @@
-# The Odin Project
+# TOP Projects
 
 This repository contains all of my projects for [The Odin Project](https://www.theodinproject.com).
 
