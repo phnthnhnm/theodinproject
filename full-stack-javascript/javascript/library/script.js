@@ -1,19 +1,49 @@
-const myLibrary = []
+class Book {
+  constructor(author, title, pages, read) {
+    this._author = author
+    this._title = title
+    this._pages = pages
+    this._read = read
+  }
 
-function Book(author, title, pages, read) {
-  this.author = author
-  this.title = title
-  this.pages = pages
-  this.read = read
+  get author() {
+    return this._author
+  }
+
+  set author(value) {
+    this._author = value
+  }
+
+  get title() {
+    return this._title
+  }
+
+  set title(value) {
+    this._title = value
+  }
+
+  get pages() {
+    return this._pages
+  }
+
+  set pages(value) {
+    this._pages = value
+  }
+
+  get read() {
+    return this._read
+  }
+
+  set read(value) {
+    this._read = value
+  }
 }
 
-myLibrary.push(new Book('J.K. Rowling', "Harry Potter and the Sorcerer's Stone", 309, true))
-myLibrary.push(new Book('J.R.R. Tolkien', 'The Hobbit', 310, false))
-myLibrary.push(new Book('George Orwell', '1984', 328, true))
+const myLibrary = []
 
 function displayBooks() {
   const container = document.getElementById('library-container')
-  container.innerHTML = '' // Clear existing books
+  container.innerHTML = ''
   myLibrary.forEach((book, index) => {
     const card = document.createElement('div')
     card.classList.add('card')
